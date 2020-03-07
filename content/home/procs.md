@@ -36,7 +36,7 @@ subtitle = ""
   # image_parallax = true  # Use a fun parallax-like fixed background effect? true/false
   
   # Text color (true=light or false=dark).
-  text_color_light = true
+  text_color_light = false
 
 [design.spacing]
   # Customize the section spacing. Order is top, right, bottom, left.
@@ -49,8 +49,9 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-
-
+## all processes
+### ps -ef 
+`
 /sbin/init
 [kthreadd]
 [kworker/0:0]
@@ -139,3 +140,4 @@ sshd: ec2-user@pts/0
 ps ax
 /bin/sh /usr/libexec/mysql57/mysqld_safe --datadir=/var/lib/mysql --socket=/var/lib/mysql/mysql.sock --pid-file=/var/run/mysqld/mysqld.pid --basedir=/usr --user=mysql
 /usr/libexec/mysql57/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib64/mysql57/plugin --user=mysql --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/lib/mysql/mysql.sock
+`
