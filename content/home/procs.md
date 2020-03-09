@@ -49,93 +49,126 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-This stuff might actually work. 
+These are the processes running by a default install of Ubuntu Server 18.04.4.
+The only non-default I took was to run sshd so I could log in and get this list.
 ### ps -ef 
-`/sbin/init`  the classic init  
-`[kthreadd]`  kernel thread deamon  
-`[kworker/0:0]`  
-`[kworker/0:0H]`  
-`[mm_percpu_wq]`  
-`[ksoftirqd/0]`  
-`[rcu_sched]`  
-`[rcu_bh]`  
-`[migration/0]`  
-`[watchdog/0]`  
-`[cpuhp/0]`  
-`[kdevtmpfs]`  
-`[netns]`  
-`[xenbus]`  
-`[xenwatch]`  
-`[kworker/0:1]`  
-`[khungtaskd]`  
-`[oom_reaper]`  
-`[writeback]`  
-`[kcompactd0]`  
-`[ksmd]`  
-`[khugepaged]`  
-`[crypto]`  
-`[kintegrityd]`  
-`[kblockd]`  
-`[md]`  
-`[edac-poller]`  
-`[kauditd]`  
-`[kswapd0]`  
-`[kthrotld]`  
-`[kstrp]`  
-`/usr/sbin/sshd`  
-`[ata_sff]`  
-`[scsi_eh_0]`  
-`[scsi_tmf_0]`  
-`[scsi_eh_1]`  
-`[scsi_tmf_1]`  
-`[kworker/u31:0]`  
-`[jbd2/xvda1-8]`  
-`[ext4-rsv-conver]`  
-`[kworker/0:1H]`  
-`/sbin/udevd -d`  
-`lvmetad`  
-`lvmpolld`  
-`[ipv6_addrconf]`  
-`/sbin/dhclient -H openfacesystems -q -lf /var/lib/dhclient/dhclient-eth0.leases -pf /var/run/dhclient-eth0.pid eth0`  
-`/sbin/dhclient -6 -nw -lf /var/lib/dhclient/dhclient6-eth0.leases -pf /var/run/dhclient6-eth0.pid -H openfacesystems eth0`  
-`/usr/bin/amazon-ssm-agent`  
-`auditd`  
-`/sbin/rsyslogd -i /var/run/syslogd.pid -c 5`  
-`rngd --no-tpm=1 --quiet`  
-`rpcbind`  
-`rpc.statd`  
-`dbus-daemon --system`  
-`/usr/sbin/acpid`  
-`ntpd -u ntp:ntp -p /var/run/ntpd.pid -g`  
-`/usr/sbin/vsftpd /etc/vsftpd/vsftpd.conf`  
-`crond`  
-`/usr/sbin/atd`  
-`/sbin/agetty ttyS0 9600 vt100-nav`  
-`/sbin/mingetty /dev/tty1`  
-`/sbin/mingetty /dev/tty2`  
-`/sbin/mingetty /dev/tty3`  
-`/sbin/mingetty /dev/tty4`  
-`/sbin/mingetty /dev/tty5`  
-`/sbin/mingetty /dev/tty6`  
-`[kworker/u30:2]`  
-`/usr/sbin/httpd`  
-`/usr/local/bin/logger -d -n log.laminack.com -p local3 info`  
-`/usr/local/bin/logger -d -n log.laminack.com -p local4 info`  
-`[kworker/u30:0]`  
-`/usr/sbin/httpd`  
-`/usr/sbin/httpd`  
-`/usr/sbin/httpd`  
-`/usr/sbin/httpd`  
-`/usr/sbin/httpd`  
-`/usr/sbin/httpd`  
-`/usr/sbin/httpd`  
-`/usr/sbin/httpd`  
-`/usr/sbin/httpd`  
-`/usr/sbin/httpd`  
-`/usr/sbin/httpd`  
-`sshd: ec2-user [priv]`  
-`sshd: ec2-user@pts/0`  
-`-bash`  
-`ps ax`  
-`/bin/sh /usr/libexec/mysql57/mysqld_safe --datadir=/var/lib/mysql --socket=/var/lib/mysql/mysql.sock --pid-file=/var/run/mysqld/mysqld.pid --basedir=/usr --user=mysql`  
-`/usr/libexec/mysql57/mysqld --basedir=/usr --datadir=/var/lib/mysql --plugin-dir=/usr/lib64/mysql57/plugin --user=mysql --log-error=/var/log/mysqld.log --pid-file=/var/run/mysqld/mysqld.pid --socket=/var/lib/mysql/mysql.sock`  
+`/sbin/init maybe-ubiquity`   
+`[kthreadd]`   
+`[kworker/0:0H]`   
+`[mm_percpu_wq]`   
+`[ksoftirqd/0]`   
+`[rcu_sched]`   
+`[rcu_bh]`   
+`[migration/0]`   
+`[watchdog/0]`   
+`[cpuhp/0]`   
+`[cpuhp/1]`   
+`[watchdog/1]`   
+`[migration/1]`   
+`[ksoftirqd/1]`   
+`[kworker/1:0H]`   
+`[cpuhp/2]`   
+`[watchdog/2]`   
+`[migration/2]`   
+`[ksoftirqd/2]`   
+`[kworker/2:0H]`   
+`[cpuhp/3]`   
+`[watchdog/3]`   
+`[migration/3]`   
+`[ksoftirqd/3]`   
+`[kworker/3:0H]`   
+`[kdevtmpfs]`   
+`[netns]`   
+`[rcu_tasks_kthre]`   
+`[kauditd]`   
+`[kworker/1:1]`   
+`[khungtaskd]`   
+`[oom_reaper]`   
+`[writeback]`   
+`[kcompactd0]`   
+`[ksmd]`   
+`[khugepaged]`   
+`[crypto]`   
+`[kintegrityd]`   
+`[kblockd]`   
+`[kworker/3:1]`   
+`[kworker/2:1]`   
+`[ata_sff]`   
+`[md]`   
+`[edac-poller]`   
+`[devfreq_wq]`   
+`[watchdogd]`   
+`[kswapd0]`   
+`[kworker/u33:0]`   
+`[ecryptfs-kthrea]`   
+`[kthrotld]`   
+`[acpi_thermal_pm]`   
+`[ipv6_addrconf]`   
+`[kstrp]`   
+`[kworker/2:2]`   
+`[charger_manager]`   
+`[scsi_eh_0]`   
+`[scsi_tmf_0]`   
+`[scsi_eh_1]`   
+`[scsi_tmf_1]`   
+`[scsi_eh_2]`   
+`[scsi_tmf_2]`   
+`[scsi_eh_3]`   
+`[scsi_tmf_3]`   
+`[scsi_eh_4]`   
+`[scsi_tmf_4]`   
+`[scsi_eh_5]`   
+`[scsi_tmf_5]`   
+`[e1000e]`   
+`[i915/signal:0]`   
+`[i915/signal:1]`   
+`[i915/signal:2]`   
+`[kworker/3:1H]`   
+`[raid5wq]`   
+`[jbd2/sda2-8]`   
+`[ext4-rsv-conver]`   
+`[kworker/0:1H]`   
+`[kworker/1:1H]`   
+`[kworker/2:1H]`   
+`/lib/systemd/systemd-journald`   
+`[iscsi_eh]`   
+`/sbin/lvmetad -f`   
+`[ib-comp-wq]`   
+`[ib-comp-unb-wq]`   
+`[ib_mcast]`   
+`[ib_nl_sa_wq]`   
+`[rdma_cm]`   
+`/lib/systemd/systemd-udevd`   
+`/lib/systemd/systemd-timesyncd`   
+`[irq/27-mei_me]`   
+`/lib/systemd/systemd-networkd`   
+`/lib/systemd/systemd-resolved`   
+`/usr/sbin/atd -f`   
+`/usr/bin/lxcfs /var/lib/lxcfs/`   
+`/usr/sbin/rsyslogd -n`   
+`/usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers`   
+`/usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only`   
+`/usr/sbin/cron -f`   
+`/usr/lib/accountsservice/accounts-daemon`   
+`/usr/sbin/thermald --no-daemon --dbus-enable`   
+`/lib/systemd/systemd-logind`   
+`/usr/sbin/irqbalance --foreground`   
+`/usr/lib/policykit-1/polkitd --no-debug`   
+`/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal`   
+`/bin/login -p --`   
+`[loop0]`   
+`[kworker/0:6]`   
+`[kworker/0:7]`   
+`/usr/lib/snapd/snapd`   
+`/lib/systemd/systemd --user`   
+`(sd-pam)`   
+`-bash`   
+`/usr/sbin/sshd -D`   
+`[kworker/1:2]`   
+`[kworker/3:2]`   
+`[kworker/u32:0]`   
+`[kworker/u32:2]`   
+`[kworker/u32:1]`   
+`[kworker/1:0]`   
+`[kworker/3:0]`   
+`ps -ef`   
