@@ -49,7 +49,7 @@ subtitle = ""
  # CSS class.
  css_class = ""
 +++
-These are the processes running by a default install of Ubuntu Server 18.04.4.
+These are the processes running on a default install of Ubuntu Server 18.04.4.
 The only non-default I took was to run sshd so I could log in and get this list.
 ### ps -ef 
 `/sbin/init maybe-ubiquity` the one true [process to start them all](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/installation_guide/s2-boot-init-shutdown-init) the [maybe-ubiquity](https://askubuntu.com/questions/1165399/why-maybe-ubiquity-on-default-kernel-command-line) part is from GRUB     
@@ -77,29 +77,29 @@ The only non-default I took was to run sshd so I could log in and get this list.
 `[migration/3]` ditto   
 `[ksoftirqd/3]` ditto   
 `[kworker/3:0H]` ditto   
-`[kdevtmpfs]`   
-`[netns]`   
-`[rcu_tasks_kthre]`   
-`[kauditd]`   
-`[kworker/1:1]`   
-`[khungtaskd]`   
-`[oom_reaper]`   
-`[writeback]`   
-`[kcompactd0]`   
-`[ksmd]`   
-`[khugepaged]`   
-`[crypto]`   
-`[kintegrityd]`   
-`[kblockd]`   
-`[kworker/3:1]`   
-`[kworker/2:1]`   
-`[ata_sff]`   
-`[md]`   
-`[edac-poller]`   
-`[devfreq_wq]`   
-`[watchdogd]`   
-`[kswapd0]`   
-`[kworker/u33:0]`   
+`[kdevtmpfs]` this thread [populates and maintains](https://www.spinics.net/lists/selinux/msg17455.html) a device node tree    
+`[netns]` this maintains the [network namespace](https://blogs.igalia.com/dpino/2016/04/10/network-namespaces/)   
+`[rcu_tasks_kthre]` clearly a part of the Read Copy Update subsystem, but I'll be hanged if I can find ANYTHING about this thread on the web.    
+`[kauditd]` the kernel thread responsible for [auditing security events](https://wiki.gentoo.org/wiki/SELinux/Tutorials/The_security_context_of_a_process)   
+`[kworker/1:1]` another kernel thread placeholder, see above   
+`[khungtaskd]` [looks for hung tasks](https://www.quora.com/What-is-the-purpose-of-khungtaskd-Linux-Kernel-Daemon) every two minutes   
+`[oom_reaper]` cleans up [processes that are Out Of Memory](https://lwn.net/Articles/666024/).   
+`[writeback]` handles [slow writes](https://lwn.net/Articles/682582/) to block devices   
+`[kcompactd0]` handles background [memory compaction](https://www.linux-magazine.com/Issues/2015/179/Kernel-News)   
+`[ksmd]` [kernel samepage merging](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/virtualization_tuning_and_optimization_guide/chap-ksm) daemon, used by the KVM hypervisor.    
+`[khugepaged]` keeps track of [huge virtual memory pages](https://www.quora.com/What-is-the-purpose-of-khugepaged-Linux-Kernel-Daemon) efficiently    
+`[crypto]` [provides an API interface](https://www.quora.com/What-is-the-purpose-of-crypto-Linux-Kernel-Thread) to the kernel crypto module   
+`[kintegrityd]` [checks the integrity](https://unix.stackexchange.com/questions/337104/what-is-kintegrityd-and-why-it-has-20-nice-value) of block devices by writing/reading data to and from them.   
+`[kblockd]` [checks for congestion](https://www.quora.com/What-is-the-purpose-of-kblockd-Linux-Kernel-Thread) in I/O pipes   
+`[kworker/3:1]` another generic kernel thread, see above.   
+`[kworker/2:1]` ditto   
+`[ata_sff]` handles [ATA Small Form Factor](https://cateee.net/lkddb/web-lkddb/ATA_SFF.html) interfaces   
+`[md]` handles [multiple device](https://www.linuxquestions.org/questions/slackware-14/md-process-208982/) interfaces, e.g. RAID arrays   
+`[edac-poller]` handles [memory error detection and correction](https://www.kernel.org/doc/html/v4.13/driver-api/edac.html)    
+`[devfreq_wq]` apparently allows for the [reuse of frequently-used kernel workqueues](https://lore.kernel.org/patchwork/patch/1164316/)   
+`[watchdogd]` probably has something to do with the [watchdog thread](http://www.crawford-space.co.uk/old_psc/watchdog/watchdog-background.html). This is another one with almost no documentation.   
+`[kswapd0]` The [manager of virtual memory](https://askubuntu.com/questions/259739/kswapd0-is-taking-a-lot-of-cpu). An ancient and venerable subsystem.   
+`[kworker/u33:0]` Another generic kernel thread ready to be used. See above.   
 `[ecryptfs-kthrea]`   
 `[kthrotld]`   
 `[acpi_thermal_pm]`   
