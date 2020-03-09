@@ -52,13 +52,13 @@ subtitle = ""
 These are the processes running by a default install of Ubuntu Server 18.04.4.
 The only non-default I took was to run sshd so I could log in and get this list.
 ### ps -ef 
-`/sbin/init maybe-ubiquity`   
-`[kthreadd]`   
-`[kworker/0:0H]`   
-`[mm_percpu_wq]`   
-`[ksoftirqd/0]`   
-`[rcu_sched]`   
-`[rcu_bh]`   
+`/sbin/init maybe-ubiquity` the one true [process to start them all](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/installation_guide/s2-boot-init-shutdown-init) the [maybe-ubiquity](https://askubuntu.com/questions/1165399/why-maybe-ubiquity-on-default-kernel-command-line) part is from GRUB     
+`[kthreadd]` [kernel thread master](https://subscription.packtpub.com/book/application_development/9781785883057/1/ch01lvl1sec13/kernel-threads) for spawning off processes largely to manage hardware. Kthread processes are shown in [square brackets].   
+`[kworker/0:0H]` a [kernel worker thread placeholder](https://askubuntu.com/questions/33640/kworker-what-is-it-and-why-is-it-hogging-so-much-cpu)    
+`[mm_percpu_wq]` wow! really not a lot about the memory management per cpu work queue thread, other than [cryptic messages in the kernel maintainers list](https://gitlab.collabora.com/tcl/linux/commit/ce612879ddc78ea7e4de4be80cba4ebf9caa07ee)   
+`[ksoftirqd/0]` a way of [handling hardware interrupt requests](https://www.supportsages.com/what-does-ksoftirqd-do/) outside a regular handler   
+`[rcu_sched]` the [Read Copy Update scheduler](https://www.quora.com/What-is-the-purpose-of-rcu_sched-Linux-Kernel-Thread) that synchronizes data across writer and readers   
+`[rcu_bh]` a cousin of the rcu_sched above, it provides [grace periods](https://www.quora.com/What-is-the-purpose-of-rcu_bh-Linux-Kernel-Thread) in the RCU subsystem.   
 `[migration/0]`   
 `[watchdog/0]`   
 `[cpuhp/0]`   
