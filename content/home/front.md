@@ -50,4 +50,4 @@ subtitle = ""
  css_class = ""
 +++
 
-Welcome to EveryLinuxProcess.com. This tries to give a feel of what makes a Linux system tick.
+Back in 1982 when I was a sysadmin on my first Unix box, a `ps` would show init, cron, lpd and a handful of gettys. It was a small, close-knit family. The other day I did a `ps` on a Linux machine and hundreds of processes were listed. Most were strangers to me. This was not acceptable, so I started this site to familiarize myself with the current generation of processes. I found that most aren't really processes in the classic sense, but kernel threads. I hope you'll find the below list of processes, descriptions and linked resources interesting and informative.

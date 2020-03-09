@@ -59,24 +59,24 @@ The only non-default I took was to run sshd so I could log in and get this list.
 `[ksoftirqd/0]` a way of [handling hardware interrupt requests](https://www.supportsages.com/what-does-ksoftirqd-do/) outside a regular handler   
 `[rcu_sched]` the [Read Copy Update scheduler](https://www.quora.com/What-is-the-purpose-of-rcu_sched-Linux-Kernel-Thread) that synchronizes data across writer and readers   
 `[rcu_bh]` a cousin of the rcu_sched above, it provides [grace periods](https://www.quora.com/What-is-the-purpose-of-rcu_bh-Linux-Kernel-Thread) in the RCU subsystem.   
-`[migration/0]`   
-`[watchdog/0]`   
-`[cpuhp/0]`   
-`[cpuhp/1]`   
-`[watchdog/1]`   
-`[migration/1]`   
-`[ksoftirqd/1]`   
-`[kworker/1:0H]`   
-`[cpuhp/2]`   
-`[watchdog/2]`   
-`[migration/2]`   
-`[ksoftirqd/2]`   
-`[kworker/2:0H]`   
-`[cpuhp/3]`   
-`[watchdog/3]`   
-`[migration/3]`   
-`[ksoftirqd/3]`   
-`[kworker/3:0H]`   
+`[migration/0]` [Distributes processes across cores](https://superuser.com/questions/440906/what-is-the-migration-process). One such process per core.
+`[watchdog/0]` Checks to [ensure the system's still running](https://linuxhint.com/linux-kernel-watchdog-explained/), and reboots if hung, hopefully.   
+`[cpuhp/0]` Process that supports [physically adding and removing CPUs](https://www.kernel.org/doc/html/latest/core-api/cpu_hotplug.html) from the system.   
+`[cpuhp/1]` [lscpu](https://linux.die.net/man/1/lscpu) says this machine has 4 cores, so these one-per-core kernel threads are repeated with different /n suffixes    
+`[watchdog/1]` ditto   
+`[migration/1]` ditto   
+`[ksoftirqd/1]` ditto   
+`[kworker/1:0H]` ditto   
+`[cpuhp/2]` ditto   
+`[watchdog/2]` ditto   
+`[migration/2]` ditto   
+`[ksoftirqd/2]` ditto   
+`[kworker/2:0H]` ditto   
+`[cpuhp/3]` ditto   
+`[watchdog/3]` ditto   
+`[migration/3]` ditto   
+`[ksoftirqd/3]` ditto   
+`[kworker/3:0H]` ditto   
 `[kdevtmpfs]`   
 `[netns]`   
 `[rcu_tasks_kthre]`   
