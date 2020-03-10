@@ -100,75 +100,75 @@ The only non-default I took was to run sshd so I could log in and get this list.
 `[watchdogd]` probably has something to do with the [watchdog thread](http://www.crawford-space.co.uk/old_psc/watchdog/watchdog-background.html). This is another one with almost no documentation.   
 `[kswapd0]` The [manager of virtual memory](https://askubuntu.com/questions/259739/kswapd0-is-taking-a-lot-of-cpu). An ancient and venerable subsystem.   
 `[kworker/u33:0]` Another generic kernel thread ready to be used. See above.   
-`[ecryptfs-kthrea]`   
-`[kthrotld]`   
-`[acpi_thermal_pm]`   
-`[ipv6_addrconf]`   
-`[kstrp]`   
-`[kworker/2:2]`   
-`[charger_manager]`   
-`[scsi_eh_0]`   
-`[scsi_tmf_0]`   
-`[scsi_eh_1]`   
-`[scsi_tmf_1]`   
-`[scsi_eh_2]`   
-`[scsi_tmf_2]`   
-`[scsi_eh_3]`   
-`[scsi_tmf_3]`   
-`[scsi_eh_4]`   
-`[scsi_tmf_4]`   
-`[scsi_eh_5]`   
-`[scsi_tmf_5]`   
-`[e1000e]`   
-`[i915/signal:0]`   
-`[i915/signal:1]`   
-`[i915/signal:2]`   
-`[kworker/3:1H]`   
-`[raid5wq]`   
-`[jbd2/sda2-8]`   
-`[ext4-rsv-conver]`   
-`[kworker/0:1H]`   
-`[kworker/1:1H]`   
-`[kworker/2:1H]`   
-`/lib/systemd/systemd-journald`   
-`[iscsi_eh]`   
-`/sbin/lvmetad -f`   
-`[ib-comp-wq]`   
-`[ib-comp-unb-wq]`   
-`[ib_mcast]`   
-`[ib_nl_sa_wq]`   
-`[rdma_cm]`   
-`/lib/systemd/systemd-udevd`   
-`/lib/systemd/systemd-timesyncd`   
-`[irq/27-mei_me]`   
-`/lib/systemd/systemd-networkd`   
-`/lib/systemd/systemd-resolved`   
-`/usr/sbin/atd -f`   
-`/usr/bin/lxcfs /var/lib/lxcfs/`   
-`/usr/sbin/rsyslogd -n`   
-`/usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers`   
-`/usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only`   
-`/usr/sbin/cron -f`   
-`/usr/lib/accountsservice/accounts-daemon`   
-`/usr/sbin/thermald --no-daemon --dbus-enable`   
-`/lib/systemd/systemd-logind`   
-`/usr/sbin/irqbalance --foreground`   
-`/usr/lib/policykit-1/polkitd --no-debug`   
-`/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal`   
-`/bin/login -p --`   
-`[loop0]`   
-`[kworker/0:6]`   
-`[kworker/0:7]`   
-`/usr/lib/snapd/snapd`   
-`/lib/systemd/systemd --user`   
-`(sd-pam)`   
-`-bash`   
-`/usr/sbin/sshd -D`   
-`[kworker/1:2]`   
-`[kworker/3:2]`   
-`[kworker/u32:0]`   
-`[kworker/u32:2]`   
-`[kworker/u32:1]`   
-`[kworker/1:0]`   
-`[kworker/3:0]`   
-`ps -ef`   
+`[ecryptfs-kthrea]` This [encrypts and decrypts](https://www.quora.com/Linux-Kernel-What-is-the-purpose-of-ecryptfs-kthrea-Kernel-Thread) data passing out to the filesystem.    
+`[kthrotld]` Controls bandwidth on a request queue by [throttling requests](https://askubuntu.com/questions/986526/what-is-kthrotld)    
+`[acpi_thermal_pm]` Provides an API interface to the ACPI to provider [thermal management](https://wiki.ubuntu.com/Kernel/PowerManagement/ThermalIssues)   
+`[ipv6_addrconf]` handles the IPv6 [configuration workqueue](https://github.com/torvalds/linux/blob/master/net/ipv6/addrconf.c)   
+`[kstrp]` the [Kernel Stream Processor](https://www.kernel.org/doc/Documentation/networking/strparser.txt)   
+`[kworker/2:2]` another worker thread placeholder, see the first one above   
+`[charger_manager]` about what you'd expect: a [battery charger manager](https://www.kernel.org/doc/html/latest/power/charger-manager.html)   
+`[scsi_eh_0]` Linux boxes almost never have SCSI disks anymore. This is the handles errors from [other types of disks](http://events17.linuxfoundation.org/sites/events/files/slides/SCSI-EH.pdf) that appear as SCSI   
+`[scsi_tmf_0]` handles disk [Task Mangement Functions](https://www.t10.org/ftp/t10/document.06/06-179r0.pdf)   
+`[scsi_eh_1]` same as above for the next disk   
+`[scsi_tmf_1]` ditto  
+`[scsi_eh_2]` ditto  
+`[scsi_tmf_2]` ditto  
+`[scsi_eh_3]` ditto   
+`[scsi_tmf_3]` ditto   
+`[scsi_eh_4]` ditto   
+`[scsi_tmf_4]` ditto   
+`[scsi_eh_5]` ditto   
+`[scsi_tmf_5]` ditto   
+`[e1000e]` Handles the [Intel Gigabit Ethernet](https://www.intel.com/content/www/us/en/support/articles/000005480/network-and-i-o/ethernet-products.html) devices   
+`[i915/signal:0]` Handles the [Intel i915 Graphics](https://www.kernel.org/doc/html/v4.14/gpu/i915.html) drivers   
+`[i915/signal:1]` ditto   
+`[i915/signal:2]` ditto   
+`[kworker/3:1H]` another placeholder thread   
+`[raid5wq]` Probably a RAID5 driver, can't find any info on it.   
+`[jbd2/sda2-8]` Updates the [filesystem journal](https://unix.stackexchange.com/questions/343591/why-is-most-the-of-disk-io-attributed-to-jbd2-and-not-to-the-process-that-is-act)   
+`[ext4-rsv-conver]` Handles [writeback conversion work](https://unix.stackexchange.com/questions/463210/some-documentation-for-the-ext4-rsv-conver-process) from the ext4 filesystem.   
+`[kworker/0:1H]` another placeholder thread   
+`[kworker/1:1H]` another placeholder thread  
+`[kworker/2:1H]` another placeholder thread  
+`/lib/systemd/systemd-journald` and into userland! this is the process that [collects logging data](https://www.freedesktop.org/software/systemd/man/systemd-journald.service.html)   
+`[iscsi_eh]` Can't find much info on this one either, probably the [iSCSI error handler](https://sourceforge.net/p/scst/mailman/message/30629304/)   
+`/sbin/lvmetad -f` The Logical Volume Manager [metadata caching process](https://unix.stackexchange.com/questions/166832/what-is-lvmetad-and-why-would-i-want-or-need-to-use-it)   
+`[ib-comp-wq]` Found one reference to it in the kernel mailing list. It has to do with the InfiniBand driver, and it's now [cpu-bound](https://lwn.net/Articles/718114/)   
+`[ib-comp-unb-wq]` Dealing with the [InfiniBand WorkQueue](https://gitlab.freedesktop.org/lyudess/linux/commit/5c5702e259dc66e6fceed5117effab79c186e87a)   
+`[ib_mcast]` Handling [InfiniBand Multicast groups](https://dox.ipxe.org/ib__mcast_8c.html)   
+`[ib_nl_sa_wq]` No info on this one, either. Some InfiniBand WorkQueue   
+`[rdma_cm]` [Remote Direct Memory Access](https://wiki.debian.org/RDMA), usually part of InfiniBand   
+`/lib/systemd/systemd-udevd` The part of systemd that handles [devices coming and going](http://man7.org/linux/man-pages/man8/systemd-udevd.service.8.html)   
+`/lib/systemd/systemd-timesyncd` The systemd way of [synchronizing the system clock](https://feeding.cloud.geek.nz/posts/time-synchronization-with-ntp-and-systemd/) to an external timekeeper. The supposedly better replacement for ntpd.    
+`[irq/27-mei_me]` One of the daemons that handles [IRQ interrupts](https://linuxmusicians.com/viewtopic.php?t=19065&start=15)   
+`/lib/systemd/systemd-networkd` The part of the systemd juggernaut that [handles networking](https://wiki.archlinux.org/index.php/Systemd-networkd)   
+`/lib/systemd/systemd-resolved` The systemd [Domain Name Service resolution manager](https://www.freedesktop.org/software/systemd/man/systemd-resolved.service.html)   
+`/usr/sbin/atd -f` One of the few old-timers left: The [at daemon](https://www.lifewire.com/atd-linux-command-4095628) that handles one-time delayed job execution   
+`/usr/bin/lxcfs /var/lib/lxcfs/` Manages [filesystems for fuse containers](https://ubuntu.com/blog/introducing-lxcfs)   
+`/usr/sbin/rsyslogd -n` The [remote system logger](http://man7.org/linux/man-pages/man8/rsyslogd.8.html) daemon.   
+`/usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers` Handles [changes to the systemd-networkd](http://manpages.ubuntu.com/manpages/bionic/man8/networkd-dispatcher.8.html)   
+`/usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only` The [Dbus message bus daemon](https://dbus.freedesktop.org/doc/dbus-daemon.1.html) without which there would be no systemd functionality   
+`/usr/sbin/cron -f` An old subsystem I've used for decades: the [cron daemon](https://linuxacademy.com/blog/linux/the-cron-daemon/) for regularly scheduled tasks   
+`/usr/lib/accountsservice/accounts-daemon` Provides Dbus interface to [modifiying account information](http://forums.debian.net/viewtopic.php?f=5&t=129556)   
+`/usr/sbin/thermald --no-daemon --dbus-enable` The user-land deamon to [monitor the system's heat](https://wiki.debian.org/thermald)   
+`/lib/systemd/systemd-logind` About what it appears it [handles the login process](https://www.freedesktop.org/software/systemd/man/systemd-logind.service.html). Gone are the gettys.   
+`/usr/sbin/irqbalance --foreground` [Distributes IRQs among the processors](https://www.thegeekdiary.com/linux-os-service-irqbalance/)   
+`/usr/lib/policykit-1/polkitd --no-debug` Facilitates letting [unprivileged processes talk to privileged](https://wiki.archlinux.org/index.php/Polkit) ones.   
+`/usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal` Keeps the [system from shutting down while software is being updated](https://askubuntu.com/questions/1098757/ubuntu-18-10-unattended-upgrades-shutdown-wait-for-signal)   
+`/bin/login -p --` The actual [login process](https://linux.die.net/man/1/login) that manages a user login   
+`[loop0]` Not much information about this either. Possibly a [loopback filesystem thread](http://linux-vserver.org/Loop_Device)?   
+`[kworker/0:6]` another placeholder thread    
+`[kworker/0:7]` ditto  
+`/usr/lib/snapd/snapd` The runner for the [Snap packages](https://wiki.archlinux.org/index.php/Snap)   
+`/lib/systemd/systemd --user` The user-land [heart of systemd](https://www.linux.com/tutorials/understanding-and-using-systemd/)   
+`(sd-pam)` a [helper process for the Pluggable Authentication Module](https://systemd-devel.freedesktop.narkive.com/nWBQzgXB/systemd-user-and-sd-pam-user-processes-in-login-shell) system   
+`-bash` What I'm using now, the [Bourne-again Shell](https://www.gnu.org/software/bash/)   
+`/usr/sbin/sshd -D` The [Secure Shell server process](https://www.ssh.com/ssh/sshd)   
+`[kworker/1:2]` another placeholder thread   
+`[kworker/3:2]` ditto  
+`[kworker/u32:0]` ditto  
+`[kworker/u32:2]` ditto  
+`[kworker/u32:1]` ditto  
+`[kworker/1:0]` ditto  
+`[kworker/3:0]` ditto  
+`ps -ef` List the status of [all processes](http://man7.org/linux/man-pages/man1/ps.1.html)   
