@@ -172,3 +172,6 @@ The only non-default I took was to run sshd so I could log in and get this list.
 `[kworker/1:0]` ditto  
 `[kworker/3:0]` ditto  
 `ps -ef` List the status of [all processes](http://man7.org/linux/man-pages/man1/ps.1.html)   
+
+I guess my biggest takeaway from this is that despite the voluminous documentation available about Linux, there still a half-dozen or so kernel threads that remain almost completely undocumented. 
+
