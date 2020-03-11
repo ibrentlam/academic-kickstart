@@ -57,7 +57,7 @@ The only non-default I took was to run sshd so I could log in and get this list.
 `[kworker/0:0H]` a [kernel worker thread placeholder](https://askubuntu.com/questions/33640/kworker-what-is-it-and-why-is-it-hogging-so-much-cpu)    
 `[mm_percpu_wq]` wow! really not a lot about the memory management per cpu work queue thread, other than [cryptic messages in the kernel maintainers list](https://gitlab.collabora.com/tcl/linux/commit/ce612879ddc78ea7e4de4be80cba4ebf9caa07ee)   
 `[ksoftirqd/0]` a way of [handling hardware interrupt requests](https://www.supportsages.com/what-does-ksoftirqd-do/) outside a regular handler   
-`[rcu_sched]` the [Read Copy Update scheduler](https://www.quora.com/What-is-the-purpose-of-rcu_sched-Linux-Kernel-Thread) that synchronizes data across writer and readers   
+`[rcu_sched]` the [Read Copy Update scheduler](https://www.quora.com/What-is-the-purpose-of-rcu_sched-Linux-Kernel-Thread) that synchronizes data across writer and readers. [Here's the latest on RCU](https://lwn.net/Articles/777036/)   
 `[rcu_bh]` a cousin of the rcu_sched above, it provides [grace periods](https://www.quora.com/What-is-the-purpose-of-rcu_bh-Linux-Kernel-Thread) in the RCU subsystem.   
 `[migration/0]` [Distributes processes across cores](https://superuser.com/questions/440906/what-is-the-migration-process). One such process per core.
 `[watchdog/0]` Checks to [ensure the system's still running](https://linuxhint.com/linux-kernel-watchdog-explained/), and reboots if hung, hopefully.   
